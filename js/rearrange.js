@@ -82,7 +82,7 @@ function verify()
     }else{
       var item = items[i];
       item.classList.add('tryagain');
-      window.setTimeout(()=> {item.classList.remove('tryagain')}, 10000 );
+      window.setTimeout(()=> {item.classList.remove('tryagain')}, 5000 );
     }
 
 }
