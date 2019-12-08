@@ -37,13 +37,9 @@ function allowDrop(ev) {
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
-
-
-function drop(ev) {
-    ev.preventDefault();
-    var id= ev.dataTransfer.getData("text");
-    var item1 = document.getElementById(id);
-    var item2 = ev.target;
+function swapItems(item1,item2)
+//presumes item1 and item2 have the same parent
+{
     var parent = item1.parentElement;
     if( item2 ===item1.nextElementSibling)  
         parent.insertBefore(item2,item1);
@@ -54,6 +50,14 @@ function drop(ev) {
         parent.insertBefore(item1,item2);
         parent.insertBefore(item2,next);
     }
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var id= ev.dataTransfer.getData("text");
+    var item1 = document.getElementById(id);
+    var item2 = ev.target;
+    swapItems(item1,item2);
 }
 function match_line(str)
 {
