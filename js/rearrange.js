@@ -40,10 +40,20 @@ function drag(ev) {
 
 
 function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-    var target = ev.target;
-    target.parentElement.insertBefore(document.getElementById(data), target);
+    ev.preventDefault();
+    var id= ev.dataTransfer.getData("text");
+    var item1 = document.getElementById(id);
+    var item2 = ev.target;
+    var parent = item1.parentElement;
+    if( item2 ===item1.nextElementSibling)  
+        parent.insertBefore(item2,item1);
+    else if( item1 ===item2.nextElementSibling)  
+        parent.insertBefore(item1,item2);
+    else{
+        var next = item1.nextElementSibling;
+        parent.insertBefore(item1,item2);
+        parent.insertBefore(item2,next);
+    }
 }
 function match_line(str)
 {
