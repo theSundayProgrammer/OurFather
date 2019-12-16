@@ -1,4 +1,4 @@
-# Re-Arragnge Demo
+# Re-Arrange Demo
 This page demonstrates drag and drop in HTML5. The first
 demo is to re-arrange the phrases in the prayer <a href="ourfather.html"><i>Our Father</i></a>
 The second demo is for the prayer <a href="hailmary.html"><i>Hail Mary</i></a>
