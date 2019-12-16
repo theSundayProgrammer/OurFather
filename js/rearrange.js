@@ -13,10 +13,35 @@ function showStr(n)
 {
 return 	'<p draggable="true" ondragstart="drag(event)"' +
         'ondrop="drop(event)" ondragover="allowDrop(event)" ' +
+        'onClick="handleClick(this)"' +
+        'class ="item-type"' +
         'id="line'+n.toString() +'">'
           
         +  arr[n]+"</p>" ;
 }
+function swapClass(el,cl1,cl2)
+{
+    el.classList.remove(cl1);
+    el.classList.add(cl2);
+}
+function handleClick(obj){
+  var result=document.getElementById("result");
+  if (result && result.prev)
+    /*drop event*/
+    {
+        var item1 = result.prev;
+        var item2 = obj;
+        swapClass(item1,"item-type-selected","item-type");
+        swapItems(item1,item2);
+        result.prev=null;
+    }
+    else if (result)
+    {
+        result.prev= obj;
+        swapClass(obj,"item-type","item-type-selected");
+    }
+}
+
 function reorder(){
     var html = "";
     var numbers=[];

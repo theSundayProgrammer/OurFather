@@ -24,6 +24,12 @@ body {
 }footer {
   grid-row: 3;
   grid-column: 1 / 4;
+} .item-type{
+    border: 2px solid black;
+    border-radius : 5px;
+} .item-type-selected{
+    border: 2px solid red;
+    border-radius : 5px;
 } .tryagain {
      color:red;
  }
