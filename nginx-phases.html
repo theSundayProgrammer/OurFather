@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="css/rearrange.css" >
+    </head>
+
+        <body>
+
+            <header><h1>Nginx Phases</h1></header>
+            <main>
+                <h3 >Rearrange the lines properly</h3>
+                <p> Drag and drop or click source and destination </p>
+                <hr style="border-top:1px dotted #ccc;"/>
+                <div id="result" style="border:1px solid #ccc; padding:20px;"></div>
+                <br />
+                <span>
+                    <button onClick="verify()"> Verify </button>
+                    <p id="verygood" class="congrats ">Congratulations!</p>
+                </span>
+                </div>
+                <script>
+                    var arr = [
+		   "Post Read Phase", 
+		   "Server Rewrite Phase",
+		   "Find Config Phase",
+		   "Rewrite Phase",
+		   "Post Rewrite Phase",
+		   "Preaccess Phase",
+		   "Access Phase",
+		   "Post Access Phase",
+		   "Try Files Phase",
+		   "Content Phase",
+		   "Log Phase" 
+                    ];
+                </script>
+                <script src="js/rearrange.js"></script>
+        </body>
+</html>
